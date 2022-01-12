@@ -42,7 +42,7 @@ namespace Lab2PartSTRVar7
 			ItogText.Text = Itog;
 		}
 
-		class Logic
+		public class Logic
 		{
 			public int Dub(string sentence)
             {
