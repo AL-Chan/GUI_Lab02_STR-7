@@ -15,16 +15,20 @@ namespace Lab2PartSTRVar7
 		public Form1()
 		{
 			InitializeComponent();
+			YourText.Text = Properties.Settings.Default.YourText.ToString();
 		}
 
 		private void ConvertButton_Click(object sender, EventArgs e)
 		{
 			//вводится предложение в первое поле
 			var sentence = YourText.Text;
+			Properties.Settings.Default.YourText = sentence;
+			Properties.Settings.Default.Save(); //сохранение + восстановление
+
 			//удаление символов в квадратных скобках,
 			//тем самым получается предложение без пробелов
 			sentence = System.Text.RegularExpressions.Regex.Replace
-				(sentence, "[.,:;!?№()&^#@ -]", String.Empty);
+				(sentence, "[.,:;!?№()&^#@1234567890 -]", String.Empty);
 			//во второе поле выводится предложение без пробелов
 			YourTextNoSpaces.Text = sentence;
 			//новый экземпляр класса Логика
@@ -70,29 +74,11 @@ namespace Lab2PartSTRVar7
 
 		}
 
-	}
+        private void abouttask_Click(object sender, EventArgs e)
+        {
+			MessageBox.Show("Дано предложение. Определить, сколько в нем " +
+				"повторяющихся пар букв. Пробелы не учитывать.",
+				"Задание на строки, вариант 7");
+        }
+    }
 }
-
-
-/*         var dub = 0; // счётчик
-	
-	Console.WriteLine("Введите предложение:");
-	string sentence = Console.ReadLine(); 
-	
-	Console.WriteLine("Ниже предложение без пробелов:");
-	sentence = System.Text.RegularExpressions.Regex.Replace(sentence, "[.,:;!?№() -]", String.Empty); // ЗАМЕНА указанных знаков препинания и пробела на пустую строку
-	Console.WriteLine(sentence); // вывод на экран предложения без пробелов
-
-    for (int a = 0; a < sentence.Length - 1; a++)
-      if (sentence[a] == sentence[a + 1])
-      {
-		dub++; //счётчик с шагом 1
-      }
-	
-	if (dub!=0)
-	{
-	Console.WriteLine("Количество повторяющихся пар букв в предложении: " + dub);
-	}
-	else
-	{
-	Console.Write("В этом предложении нет повторяющихся пар букв");*/

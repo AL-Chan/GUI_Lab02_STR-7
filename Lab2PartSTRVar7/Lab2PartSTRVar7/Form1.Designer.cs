@@ -36,6 +36,7 @@ namespace Lab2PartSTRVar7
             this.NoSpaceLabel = new System.Windows.Forms.Label();
             this.ItogLabel = new System.Windows.Forms.Label();
             this.ItogText = new System.Windows.Forms.TextBox();
+            this.abouttask = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // YourText
@@ -47,14 +48,15 @@ namespace Lab2PartSTRVar7
             // 
             // YourTextNoSpaces
             // 
-            this.YourTextNoSpaces.Location = new System.Drawing.Point(24, 138);
+            this.YourTextNoSpaces.Location = new System.Drawing.Point(24, 135);
             this.YourTextNoSpaces.Name = "YourTextNoSpaces";
+            this.YourTextNoSpaces.ReadOnly = true;
             this.YourTextNoSpaces.Size = new System.Drawing.Size(501, 20);
             this.YourTextNoSpaces.TabIndex = 1;
             // 
             // ConvertButton
             // 
-            this.ConvertButton.Location = new System.Drawing.Point(40, 86);
+            this.ConvertButton.Location = new System.Drawing.Point(60, 86);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.Size = new System.Drawing.Size(427, 21);
             this.ConvertButton.TabIndex = 2;
@@ -65,7 +67,7 @@ namespace Lab2PartSTRVar7
             // StartLabel
             // 
             this.StartLabel.AutoSize = true;
-            this.StartLabel.Location = new System.Drawing.Point(28, 19);
+            this.StartLabel.Location = new System.Drawing.Point(27, 19);
             this.StartLabel.Name = "StartLabel";
             this.StartLabel.Size = new System.Drawing.Size(130, 13);
             this.StartLabel.TabIndex = 3;
@@ -83,7 +85,7 @@ namespace Lab2PartSTRVar7
             // ItogLabel
             // 
             this.ItogLabel.AutoSize = true;
-            this.ItogLabel.Location = new System.Drawing.Point(30, 175);
+            this.ItogLabel.Location = new System.Drawing.Point(27, 175);
             this.ItogLabel.Name = "ItogLabel";
             this.ItogLabel.Size = new System.Drawing.Size(222, 13);
             this.ItogLabel.TabIndex = 5;
@@ -91,16 +93,28 @@ namespace Lab2PartSTRVar7
             // 
             // ItogText
             // 
-            this.ItogText.Location = new System.Drawing.Point(23, 210);
+            this.ItogText.Location = new System.Drawing.Point(24, 191);
             this.ItogText.Name = "ItogText";
+            this.ItogText.ReadOnly = true;
             this.ItogText.Size = new System.Drawing.Size(501, 20);
             this.ItogText.TabIndex = 6;
+            // 
+            // abouttask
+            // 
+            this.abouttask.Location = new System.Drawing.Point(342, 14);
+            this.abouttask.Name = "abouttask";
+            this.abouttask.Size = new System.Drawing.Size(145, 22);
+            this.abouttask.TabIndex = 7;
+            this.abouttask.Text = "Посмотреть задание <-";
+            this.abouttask.UseVisualStyleBackColor = true;
+            this.abouttask.Click += new System.EventHandler(this.abouttask_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 450);
+            this.ClientSize = new System.Drawing.Size(533, 249);
+            this.Controls.Add(this.abouttask);
             this.Controls.Add(this.ItogText);
             this.Controls.Add(this.ItogLabel);
             this.Controls.Add(this.NoSpaceLabel);
@@ -126,6 +140,7 @@ namespace Lab2PartSTRVar7
         private System.Windows.Forms.Label NoSpaceLabel;
         private System.Windows.Forms.Label ItogLabel;
         private System.Windows.Forms.TextBox ItogText;
+        private System.Windows.Forms.Button abouttask;
     }
 }
 
